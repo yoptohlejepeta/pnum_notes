@@ -18,11 +18,9 @@
         font: "Goga Mono",
         weight: "semibold",
       )[ #file_name ] ]
-    context {
-      code_block_header
-      let line_length = measure(code_block_header).width + 5pt
-      line(length: line_length, stroke: 0.5pt + gray)
-    }
+    code_block_header
+    v(1%)
+
     let text = read("src/" + file_name)
     raw(text, lang: "hs")
   } else {
@@ -33,25 +31,20 @@
 
 #let admonition(header: "nadpis", body: "text", type: HINT) = block(
   radius: 5pt,
-  stroke: 0.75pt + type.color,
+  width: 100%,
+  inset: 10pt,
+  stroke: (
+    left: 2pt + type.color,
+  ),
   clip: true,
   breakable: false,
   fill: type.color_secondary,
 )[
-  #stack(
-    dir: ttb,
-    spacing: 0pt,
-    block(
-      inset: 8pt,
-    )[
-      *#type.symbol #text(font: "Goga")[#header]*
-      \
-      #align(center)[ #line(length: 100%, stroke: 0.75pt + type.color) ]
-    ],
-    block(
-      inset: 10pt,
-    )[#body],
-  )
+  *#type.symbol #text(font: "Goga")[#header]*
+
+  #v(1%)
+
+  #body
 ]
 
 #let dot_pattern = {
