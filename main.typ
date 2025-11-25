@@ -1,50 +1,25 @@
 #import "components.typ": *
+#import "template.typ": template
 
-#show title: it => align(center + horizon, text(font: "Raleway", size: 34pt, weight: "extrabold")[#it])
-#show heading: set text(font: "Raleway")
-#show heading: set block(spacing: 1.5em)
-#show heading.where(level: 1, outlined: true): it => align(horizon)[
-  #pagebreak(to: "odd", weak: true)
-  #text(size: 30pt)[
-    #set page(fill: rgb(220, 224, 232), numbering: none)
-    #it]
-]
-
-#show heading.where(level: 2): it => [ #pagebreak() #text(size: 18pt)[#it] ]
-#show heading.where(level: 3): set text(size: 14pt)
-#set text(font: "New Computer Modern", lang: "cs")
-#show raw: set text(font: "MartianMono NF")
-#show math.equation: set text(font: "TeX Gyre DejaVu Math")
-#set outline.entry(fill: line(length: 100%, stroke: (dash: "loosely-dotted")))
-#show link: it => text(fill: BLUE, [ #underline[#it] ])
 
 #set document(
   title: [POKROČILÉ NUMERICKÉ METODY],
   author: "Petr Kotlan",
 )
 
-
+#show: template
 
 #set page(fill: PRIMARY, background: dot_pattern)
 #set text(fill: white)
 #title()
 
-#align(center)[
-  #text(font: "Raleway", size: 15pt, weight: "bold")[
-
-    #line(length: 50%, stroke: white)
-    // KI/PNUM \
-    Petr Kotlan
-
-  ]
-]
-
 #pagebreak()
 
-#set page(fill: none, background: none)
+#set page(fill: none, background: none, numbering: none, margin: (top: 5%))
 #set text(fill: black)
-#outline(title: text(size: 24pt)[  Obsah ])
+#pagebreak()
 #set page(numbering: "1")
+#outline(title: text(size: 24pt)[ Obsah ])
 
 = Řešení soustav lineárních rovnic
 
@@ -100,4 +75,3 @@
 Příliš žluťoučký kůň úpěl ďábelské ódy.
 
 #code_block(file_name: "komb.hs")
-

@@ -1,5 +1,4 @@
 #import "symbols.typ": *
-#import "@preview/shadowed:0.2.0": shadowed
 
 #let code_block(
   code_body: none,
@@ -15,7 +14,10 @@
   width: 100%,
 )[
   #if file_name != none {
-    let code_block_header = [ #HASKELL #h(1%) #text(font: "Raleway", weight: "semibold")[ #file_name ] ]
+    let code_block_header = [ #HASKELL #h(1%) #text(
+        font: "Goga Mono",
+        weight: "semibold",
+      )[ #file_name ] ]
     context {
       code_block_header
       let line_length = measure(code_block_header).width + 5pt
@@ -29,10 +31,33 @@
 ]
 
 
-#let admonition(header: "nadpis", body: "text", type: HINT) = shadowed(
+// #let admonition(header: "nadpis", body: "text", type: HINT) = shadowed(
+//   radius: 5pt,
+// )[ #block(
+//   radius: 5pt,
+//   clip: true,
+//   breakable: false,
+// )[
+//   #stack(
+//     dir: ttb,
+//     spacing: 0pt,
+//     block(
+//       width: 100%,
+//       fill: type.color_secondary,
+//       inset: 8pt,
+//     )[*#type.symbol #text(font: "Raleway")[#header]*],
+//     block(
+//       width: 100%,
+//       inset: 8pt,
+//     )[#body],
+//   )
+// ] ]
+
+
+
+#let admonition(header: "nadpis", body: "text", type: HINT) = block(
   radius: 5pt,
-)[ #block(
-  radius: 5pt,
+  stroke: type.color,
   clip: true,
   breakable: false,
 )[
@@ -49,7 +74,7 @@
       inset: 8pt,
     )[#body],
   )
-] ]
+]
 
 #let dot_pattern = {
   let dot_size = 5pt

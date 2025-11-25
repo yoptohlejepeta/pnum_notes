@@ -12,6 +12,8 @@
 #let YELLOW = rgb(223, 142, 29)
 #let YELLOW_SECONDARY = rgb(223, 142, 29, 90)
 
+#let TEXT = rgb(76, 79, 105)
+
 #let PRIMARY = BLUE
 
 #let HINT = (
