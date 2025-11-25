@@ -2,6 +2,7 @@
 
 #let template(doc) = [
   #let mainFont = "Goga"
+  #let mathFont = "TeX Gyre DejaVu Math"
 
   #show title: it => align(center + horizon, text(font: mainFont, size: 34pt, weight: "extrabold")[#it])
   #show heading: set text(font: mainFont)
@@ -15,7 +16,7 @@
 
   #show heading.where(level: 2): it => [ #pagebreak() #text(size: 18pt)[#it] ]
   #show heading.where(level: 3): set text(size: 14pt)
-  #show math.equation: set text(font: "STIX Two Math")
+  #show math.equation: set text(font: mathFont)
   #set text(font: "Merriweather", lang: "cs")
   #show raw: set text(font: "MartianMono NF")
   #show outline: set text(font: mainFont)

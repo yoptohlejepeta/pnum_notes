@@ -31,47 +31,25 @@
 ]
 
 
-// #let admonition(header: "nadpis", body: "text", type: HINT) = shadowed(
-//   radius: 5pt,
-// )[ #block(
-//   radius: 5pt,
-//   clip: true,
-//   breakable: false,
-// )[
-//   #stack(
-//     dir: ttb,
-//     spacing: 0pt,
-//     block(
-//       width: 100%,
-//       fill: type.color_secondary,
-//       inset: 8pt,
-//     )[*#type.symbol #text(font: "Raleway")[#header]*],
-//     block(
-//       width: 100%,
-//       inset: 8pt,
-//     )[#body],
-//   )
-// ] ]
-
-
-
 #let admonition(header: "nadpis", body: "text", type: HINT) = block(
   radius: 5pt,
-  stroke: type.color,
+  stroke: 0.75pt + type.color,
   clip: true,
   breakable: false,
+  fill: type.color_secondary,
 )[
   #stack(
     dir: ttb,
     spacing: 0pt,
     block(
-      width: 100%,
-      fill: type.color_secondary,
       inset: 8pt,
-    )[*#type.symbol #text(font: "Raleway")[#header]*],
+    )[
+      *#type.symbol #text(font: "Goga")[#header]*
+      \
+      #align(center)[ #line(length: 100%, stroke: 0.75pt + type.color) ]
+    ],
     block(
-      width: 100%,
-      inset: 8pt,
+      inset: 10pt,
     )[#body],
   )
 ]
