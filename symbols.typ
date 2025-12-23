@@ -1,7 +1,10 @@
 
 #let HASKELL_COLOR = rgb("#453A62")
+#let JULIA_COLOR = rgb("#9259a3")
 // #let HASKELL = text(HASKELL_COLOR)[  ]
 #let HASKELL = box(image("assets/haskell-logo.png"), height: 11pt, baseline: 2pt)
+#let JULIA = box(image("assets/julia.svg"), height: 11pt, baseline: 2pt)
+
 
 
 #let BLUE = rgb(30, 102, 245)

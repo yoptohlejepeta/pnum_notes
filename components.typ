@@ -7,14 +7,14 @@
   breakable: false,
   fill: rgb(239, 241, 245),
   stroke: (
-    left: 2pt + HASKELL_COLOR,
+    left: 2pt + JULIA_COLOR,
   ),
   inset: 8pt,
   radius: 5pt,
   width: 100%,
 )[
   #if file_name != none {
-    let code_block_header = [ #HASKELL #h(1%) #text(
+    let code_block_header = [ #JULIA #h(1%) #text(
         font: "Goga Mono",
         weight: "semibold",
       )[ #file_name ] ]
@@ -22,7 +22,7 @@
     v(1%)
 
     let text = read("src/" + file_name)
-    raw(text, lang: "hs")
+    raw(text, lang: "julia")
   } else {
     code_body
   }
