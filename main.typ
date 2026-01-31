@@ -25,7 +25,7 @@
 #include "content/lin_soustavy/lin_soustavy.typ"
 
 
-= Test haskell code block
+= Test Julia code block
 
 Příliš žluťoučký kůň úpěl ďábelské ódy.
 
